@@ -1,0 +1,81 @@
+(*
+    ex.thy,v 1.1 2016/09/29 17:37:37 jdf Exp
+    Original Author: Tjark Weber
+    Updated to Isabelle 2016 and additions by Jacques Fleuriot
+*)
+
+section {* Propositional Logic *}
+
+theory ex imports Main begin 
+
+text {* In this exercise, we will prove some lemmas of propositional
+logic with the aid of a calculus of natural deduction.
+
+For the proofs, you may only use
+
+notI: (?P \<Longrightarrow> False) \<Longrightarrow> \<not> ?P
+notE: \<lbrakk>\<not> ?P; ?P\<rbrakk> \<Longrightarrow> ?R
+conjI: \<lbrakk>?P; ?Q\<rbrakk> \<Longrightarrow> ?P \<and> ?Q
+conjE: \<lbrakk>?P \<and> ?Q; \<lbrakk>?P; ?Q\<rbrakk> \<Longrightarrow> ?R\<rbrakk> \<Longrightarrow> ?R
+disjI1:?P \<Longrightarrow> ?P \<or> ?Q
+disjI2: ?Q \<Longrightarrow> ?P \<or> ?Q
+disjE: \<lbrakk>?P \<or> ?Q; ?P \<Longrightarrow> ?R; ?Q \<Longrightarrow> ?R\<rbrakk> \<Longrightarrow> ?R
+impI: (?P \<Longrightarrow> ?Q) \<Longrightarrow> ?P \<longrightarrow> ?Q
+impE:\<lbrakk>?P \<longrightarrow> ?Q; ?P; ?Q \<Longrightarrow> ?R\<rbrakk> \<Longrightarrow> ?R
+mp: \<lbrakk>?P \<longrightarrow> ?Q; ?P\<rbrakk> \<Longrightarrow> ?Q
+iffI:\<lbrakk>?P \<Longrightarrow> ?Q; ?Q \<Longrightarrow> ?P\<rbrakk> \<Longrightarrow> ?P = ?Q
+iffE:\<lbrakk>?P = ?Q; \<lbrakk>?P \<longrightarrow> ?Q; ?Q \<longrightarrow> ?P\<rbrakk> \<Longrightarrow> ?R\<rbrakk> \<Longrightarrow> ?R
+classical: (\<not> ?P \<Longrightarrow> ?P) \<Longrightarrow> ?P
+
+
+and the proof methods rule, erule and assumption.
+\end{itemize}
+
+Prove:
+*}
+  
+
+lemma I: "A \<longrightarrow> A"
+oops 
+
+lemma "A \<and> B \<longrightarrow> B \<and> A"
+oops 
+
+lemma "(A \<and> B) \<longrightarrow> (A \<or> B)"
+oops 
+
+lemma "((A \<or> B) \<or> C) \<longrightarrow> A \<or> (B \<or> C)"
+oops 
+
+lemma K: "A \<longrightarrow> B \<longrightarrow> A"
+oops 
+
+lemma "(A \<or> A) = (A \<and> A)"
+oops 
+
+lemma S: "(A \<longrightarrow> B \<longrightarrow> C) \<longrightarrow> (A \<longrightarrow> B) \<longrightarrow> A \<longrightarrow> C"
+oops 
+
+lemma "(A \<longrightarrow> B) \<longrightarrow> (B \<longrightarrow> C) \<longrightarrow> A \<longrightarrow> C"
+oops 
+
+lemma "\<not> \<not> A \<longrightarrow> A"
+oops 
+
+lemma "A \<longrightarrow> \<not> \<not> A"
+oops 
+
+lemma "(\<not> A \<longrightarrow> B) \<longrightarrow> (\<not> B \<longrightarrow> A)"
+oops 
+
+lemma "((A \<longrightarrow> B) \<longrightarrow> A) \<longrightarrow> A"
+oops 
+
+lemma "A \<or> \<not> A"
+oops 
+
+lemma "(\<not> (A \<and> B)) = (\<not> A \<or> \<not> B)"
+oops 
+
+end 
+
