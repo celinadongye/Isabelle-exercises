@@ -6,7 +6,7 @@
 
 section {* Propositional Logic *}
 
-theory ex imports Main begin 
+theory ex1 imports Main begin 
 
 text {* In this exercise, we will prove some lemmas of propositional
 logic with the aid of a calculus of natural deduction.
