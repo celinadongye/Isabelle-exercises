@@ -1,0 +1,18 @@
+theory tut2
+imports Main
+
+begin
+
+(*Exercise 2*)
+lemma "AL
+
+lemma "A \<and> B \<longrightarrow> B \<and> A"
+  apply (rule impI)
+  apply (erule conjE)
+  apply (rule conjI)
+   apply (assumption)
+  apply (assumption)
+  done
+
+
+end
