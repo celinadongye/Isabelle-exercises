@@ -1,0 +1,24 @@
+theory book imports Main
+
+begin
+
+lemma conj_swap1: "P \<and> Q \<Longrightarrow> Q \<and> P"
+  apply (rule conjI)
+   apply (erule conjE)
+   apply assumption
+  apply (erule conjE)
+  apply assumption
+  done
+
+lemma conj_swap2: "P \<and> Q \<Longrightarrow> Q \<and> P"
+  apply (rule conjI)
+   apply (drule conjunct2)
+   apply assumption
+  apply (drule conjunct1)
+  apply assumption
+  done
+
+lemma imp_uncurry: "P \<longrightarrow> (Q \<longrightarrow> R) \<Longrightarrow> P \<and> Q \<longrightarrow> R"
+  apply (rule impI)
+  oops
+end

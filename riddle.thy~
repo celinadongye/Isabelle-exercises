@@ -1,0 +1,30 @@
+(*
+    ex.thy,v 1.1 2016/09/29 17:37:37 jdf Exp
+    Original Author: Tjark Weber
+    Updated to Isabelle 2016 by Jacques Fleuriot
+*)
+
+section {* A Riddle: Rich Grandfather *}
+
+theory riddle imports Main begin 
+
+text {*
+  First prove the following formula, which is valid in classical predicate
+  logic, informally with pen and paper. Use case distinctions and/or proof by
+  contradiction.
+
+   "If every poor man has a rich father,
+   then there is a rich man who has a rich grandfather."
+*}
+
+theorem
+  "\<forall>x. \<not> rich x \<longrightarrow> rich (father x) \<Longrightarrow>
+  \<exists>x. rich (father (father x)) \<and> rich x"  
+oops 
+
+text {*
+  Now prove the formula in Isabelle using a sequence of rule applications (i.e.
+  only using the methods rule, erule and assumption).
+*}
+
+end 

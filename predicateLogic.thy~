@@ -115,11 +115,13 @@ lemma "(\<not> (\<forall> x. P x)) = (\<exists> x. \<not> P x)"
    apply (erule allE)
    apply (erule notE)
    apply assumption
+  apply (rule ccontr)
+  apply (erule notE)
+  apply (rule allI)
+  apply (rule ccontr)
+  apply (erule notE)
   apply (rule exI)
-   apply (rule notI)
-   apply (erule notE)
-   apply (rule allI)
-(*invalid?*)
- oops 
+  apply assumption
+  done
 
  end 
