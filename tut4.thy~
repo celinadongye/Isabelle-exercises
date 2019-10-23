@@ -1,0 +1,60 @@
+theory tut4
+  imports Main
+
+(* Isar, structured proofs *)
+
+begin
+(* Exercise 1 *)
+lemma "(P \<longrightarrow> (Q \<longrightarrow> R)) \<longrightarrow> ((P \<longrightarrow> Q) \<longrightarrow> (P \<longrightarrow> R))"
+proof
+  assume "P \<longrightarrow> (Q \<longrightarrow> R)"
+  show "(P \<longrightarrow> Q) \<longrightarrow> (P \<longrightarrow> R)"
+  proof
+    assume "P \<longrightarrow> Q"
+    show "P \<longrightarrow> R"
+    proof
+      assume P
+      show R
+      proof (rule mp)
+        show "Q \<longrightarrow> R" by (rule mp) fact+
+        show Q by (rule mp) fact+
+      qed
+    qed
+  qed
+qed
+
+lemma "(\<forall>x. P x \<longrightarrow> Q) \<longrightarrow> (\<exists>x. P x \<longrightarrow> Q)"
+proof
+  assume 0: "\<forall>x. P x \<longrightarrow> Q"
+  fix x
+  from 0 show "(\<exists>x. P x \<longrightarrow> Q)" by (rule allE)+
+qed
+
+lemma assumes 0: "(\<not>(\<exists>x. P x))" shows "(\<forall>x. \<not>P x)"
+proof -
+  from 0 show ?thesis
+  proof
+    fix x
+
+lemma assumes 0: "(\<not>(\<forall>x. P x))" shows "(\<exists>x. \<not>P x)"
+
+
+lemma "(R \<longrightarrow> P) \<longrightarrow> (((\<not>R \<or> P) \<longrightarrow> (Q \<longrightarrow> S)) \<longrightarrow> (Q \<longrightarrow> S))"
+proof
+  assume 0: "R \<longrightarrow> P"
+  show "((\<not>R \<or> P) \<longrightarrow> (Q \<longrightarrow> S)) \<longrightarrow> (Q \<longrightarrow> S)"
+  proof
+    assume 1: "\<not>R \<or> P"
+    show "Q \<longrightarrow> S"
+
+
+(* Exercise 2 *)
+lemma "(\<forall>x. \<not>rich x \<longrightarrow> rich(father x)) \<longrightarrow> (\<exists>x. rich(father(father x)) \<and> rich x)"
+proof cases
+  assume "(\<forall>x. \<not>rich x \<longrightarrow> rich(father x))"
+  show "(\<exists>x. rich(father(father x)) \<and> rich x)"
+  next
+
+qed
+
+end
