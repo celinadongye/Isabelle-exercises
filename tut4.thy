@@ -25,7 +25,6 @@ proof
   qed
 qed
 
-
 lemma "(P \<longrightarrow> (Q \<longrightarrow> R)) \<longrightarrow> ((P \<longrightarrow> Q) \<longrightarrow> (P \<longrightarrow> R))"
 proof (rule impI)+
   assume "P" "P \<longrightarrow> Q \<longrightarrow> R" then have qr: "Q \<longrightarrow> R"
